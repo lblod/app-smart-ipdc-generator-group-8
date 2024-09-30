@@ -70,3 +70,6 @@ services:
       - ./data:/app/data
     command: >
       /bin/sh -c "ollama install mistral-nemo && sleep infinity"
+      
+  tika:
+    image: apache/tika:2.9.2.1
