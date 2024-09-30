@@ -24,4 +24,5 @@
 
 ;; reading in the domain.json
 (read-domain-file "domain.json")
+(read-domain-file "codelists.json")
 (read-domain-file "ipdc.lisp")
