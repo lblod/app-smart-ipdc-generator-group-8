@@ -9,6 +9,29 @@ defmodule Dispatcher do
   define_layers [ :static, :web_page, :api_services, :not_found ]
 
 
+
+  ###############
+  # STATIC
+  ###############
+  get "/assets/*path", %{ layer: :static } do
+    Proxy.forward conn, path, "http://frontend/assets/"
+  end
+
+  get "/@appuniversum/*path", %{ layer: :static } do
+    Proxy.forward conn, path, "http://frontend/@appuniversum/"
+  end
+
+  get "/favicon.ico", %{ layer: :static } do
+    send_resp( conn, 404, "" )
+  end
+
+  #################
+  # FRONTEND PAGES
+  #################
+  get "/*path", %{ layer: :web_page, accept: %{ html: true } } do
+    Proxy.forward conn, [], "http://frontend/index.html"
+  end
+
   ###############
   # SPARQL
   ###############

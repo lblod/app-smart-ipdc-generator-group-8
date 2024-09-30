@@ -13,6 +13,13 @@ services:
       - ./config/dispatcher:/config
     labels:
       - "logging=true"
+  frontend:
+    image: lblod/frontend-smart-ipdc-generator-group-8:latest
+    links:
+      - identifier:backend
+    restart: always
+    labels:
+      - "logging=true"
 
   # Your extra services here
   resource:
@@ -70,6 +77,6 @@ services:
       - ./data:/app/data
     command: >
       /bin/sh -c "ollama install mistral-nemo && sleep infinity"
-      
+
   tika:
     image: apache/tika:2.9.2.1
