@@ -69,4 +69,4 @@ services:
     volumes:
       - ./data:/app/data
     command: >
-      /bin/sh -c "ollama install llama3 && sleep infinity"
+      /bin/sh -c "ollama install mistral-nemo && sleep infinity"
