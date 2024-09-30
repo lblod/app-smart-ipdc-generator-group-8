@@ -1,11 +1,13 @@
 services:
   identifier:
+    platform: linux/x86_64
     image: semtech/mu-identifier:1.10.3
     environment:
       SESSION_COOKIE_SECURE: "on"
     labels:
       - "logging=true"
   dispatcher:
+    platform: linux/x86_64
     image: semtech/mu-dispatcher:2.1.0-beta.2
     volumes:
       - ./config/dispatcher:/config
@@ -13,8 +15,8 @@ services:
       - "logging=true"
 
   # Your extra services here
-
   resource:
+    platform: linux/x86_64
     image: semtech/mu-cl-resources:1.25.0
     volumes:
       - ./config/resources:/config
@@ -22,6 +24,7 @@ services:
       - "logging=true"
 
   migrations:
+    platform: linux/x86_64
     image: semtech/mu-migrations-service:0.9.0
     links:
       - triplestore:database
@@ -32,12 +35,14 @@ services:
     labels:
       - "logging=true"
   delta-notifier:
+    platform: linux/x86_64
     image: semtech/mu-delta-notifier:0.4.0
     volumes:
       - ./config/delta:/config/
     labels:
       - "logging=true"
   database:
+    platform: linux/x86_64
     image: semtech/sparql-parser:0.0.8
     volumes:
       - ./config/authorization/:/config/
@@ -45,6 +50,7 @@ services:
     labels:
       - "logging=true"
   triplestore:
+    platform: linux/x86_64
     image: redpencil/virtuoso:1.2.0-rc.1
     environment:
       SPARQL_UPDATE: "true"
@@ -53,3 +59,17 @@ services:
       - ./config/virtuoso/virtuoso.ini:/data/virtuoso.ini
     labels:
       - "logging=true"
+
+  ollama:
+    platform: linux/x86_64
+    image: ollama/ollama:latest
+    container_name: ollama
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./data:/app/data
+    command: >
+      /bin/sh -c "ollama install mistral-nemo && sleep infinity"
+      
+  tika:
+    image: apache/tika:2.9.2.1
