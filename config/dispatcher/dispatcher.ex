@@ -10,6 +10,13 @@ defmodule Dispatcher do
 
 
   ###############
+  # SPARQL
+  ###############
+  match "/sparql", %{ layer: :sparql, accept: %{ any: true } } do
+    forward conn, [], "http://database:8890/sparql"
+  end
+
+  ###############
   # API SERVICES
   ###############
 
