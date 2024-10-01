@@ -96,6 +96,10 @@ services:
   
   decision-consumer:
     image: lblod/backend-smart-ipdc-generator-group-8:latest
+    labels:
+      - "logging=true"
   
   tika:
     image: apache/tika:2.9.2.1
+    labels:
+      - "logging=true"
