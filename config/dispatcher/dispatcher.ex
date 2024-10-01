@@ -59,6 +59,18 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://resource/websites/"
   end
 
+  match "/costs/*path", %{ layer: :api_services, accept: %{ json: true } } do
+    Proxy.forward conn, path, "http://resource/costs/"
+  end
+
+  match "/requirements/*path", %{ layer: :api_services, accept: %{ json: true } } do
+    Proxy.forward conn, path, "http://resource/requirements/"
+  end
+
+  match "/procedures/*path", %{ layer: :api_services, accept: %{ json: true } } do
+    Proxy.forward conn, path, "http://resource/procedures/"
+  end
+
 
   #################
   # NOT FOUND

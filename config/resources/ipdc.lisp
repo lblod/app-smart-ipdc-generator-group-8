@@ -27,8 +27,15 @@
                (concept :via ,(s-prefix "ipdc:executingAuthorityLevel")
                  :as "executing-authority-levels")
                (website :via ,(s-prefix "rdfs:seeAlso")
-                 :as "websites"))
-  :resource-base (s-url "http://data.lblod.info/id/public-service/")
+                 :as "websites")
+               (cost :via ,(s-prefix "m8g:hasCost")
+                :as "costs")
+               (requirement :via ,(s-prefix "publicservice:hasRequirement")
+                :as "requirements")
+               (procedure :via ,(s-prefix "cpsv:follows")
+                :as "procedures")
+              )
+  :resource-base (s-url "http://data.lblod.info/id/public-services/")
   :features '(include-uri)
   :on-path "public-services"
   )
@@ -43,3 +50,34 @@
                :as "public-service"))
   :resource-base (s-url "http://lblod.data.gift/websites/")
   :on-path "websites")
+
+(define-resource cost ()
+  :class (s-prefix "m8g:Cost")
+  :properties `((:title :language-string-set ,(s-prefix "dct:title"))
+                (:description :language-string-set ,(s-prefix "dct:description"))
+                (:order :number ,(s-prefix "shacl:order")))
+  :resource-base (s-url "http://data.lblod.info/id/costs/")
+  :features '(include-uri)
+  :on-path "costs"
+)
+
+(define-resource requirement ()
+  :class (s-prefix "m8g:Requirement")
+  :properties `((:title :language-string-set ,(s-prefix "dct:title"))
+                (:description :language-string-set ,(s-prefix "dct:description"))
+                (:order :number ,(s-prefix "shacl:order")))
+  :resource-base (s-url "http://data.lblod.info/id/requirements/")
+  :features '(include-uri)
+  :on-path "requirements"
+)
+
+(define-resource procedure ()
+  :class (s-prefix "cpsv:Rule")
+  :properties `((:title :language-string-set ,(s-prefix "dct:title"))
+                (:description :language-string-set ,(s-prefix "dct:description"))
+                (:order :number ,(s-prefix "shacl:order")))
+  :resource-base (s-url "http://data.lblod.info/id/procedures/")
+  :features '(include-uri)
+  :on-path "procedures"
+)
+
