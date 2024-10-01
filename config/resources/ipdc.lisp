@@ -1,6 +1,6 @@
 (define-resource public-service ()
   :class (s-prefix "ipdc:InstancePublicServiceSnapshot")
-  :properties `((:title :language-string-set ,(s-prefix "dct:title"))
+  :properties `((:name :language-string-set ,(s-prefix "dct:title"))
                  (:description :language-string-set ,(s-prefix "dct:description"))
                  (:additional-description :language-string-set ,(s-prefix "ipdc:additionalDescription"))
                  (:keyword :language-string-set ,(s-prefix "dcat:keyword"))
@@ -42,7 +42,7 @@
 
 (define-resource website ()
   :class (s-prefix "schema:WebSite")
-  :properties `((:title :language-string-set ,(s-prefix "dct:title"))
+  :properties `((:name :language-string-set ,(s-prefix "dct:title"))
                  (:description :language-string-set ,(s-prefix "dct:description"))
                  (:url :string ,(s-prefix "schema:url")))
   :has-one `((public-service :via ,(s-prefix "rdfs:seeAlso")
@@ -53,7 +53,7 @@
 
 (define-resource cost ()
   :class (s-prefix "m8g:Cost")
-  :properties `((:title :language-string-set ,(s-prefix "dct:title"))
+  :properties `((:name :language-string-set ,(s-prefix "dct:title"))
                 (:description :language-string-set ,(s-prefix "dct:description"))
                 (:order :number ,(s-prefix "shacl:order")))
   :resource-base (s-url "http://data.lblod.info/id/costs/")
@@ -63,7 +63,7 @@
 
 (define-resource requirement ()
   :class (s-prefix "m8g:Requirement")
-  :properties `((:title :language-string-set ,(s-prefix "dct:title"))
+  :properties `((:name :language-string-set ,(s-prefix "dct:title"))
                 (:description :language-string-set ,(s-prefix "dct:description"))
                 (:order :number ,(s-prefix "shacl:order")))
   :resource-base (s-url "http://data.lblod.info/id/requirements/")
@@ -73,7 +73,7 @@
 
 (define-resource procedure ()
   :class (s-prefix "cpsv:Rule")
-  :properties `((:title :language-string-set ,(s-prefix "dct:title"))
+  :properties `((:name :language-string-set ,(s-prefix "dct:title"))
                 (:description :language-string-set ,(s-prefix "dct:description"))
                 (:order :number ,(s-prefix "shacl:order")))
   :resource-base (s-url "http://data.lblod.info/id/procedures/")
