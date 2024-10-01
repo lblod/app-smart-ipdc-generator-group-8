@@ -45,5 +45,7 @@
 (add-prefix "xkos" "http://rdf-vocabulary.ddialliance.org/xkos#")
 (add-prefix "ndo" "http://oscaf.sourceforge.net/ndo.html#")
 (add-prefix "organisatie" "https://data.vlaanderen.be/ns/organisatie#")
+(add-prefix "shacl" "http://www.w3.org/ns/shacl#")
+(add-prefix "publicservice" "http://vocab.belgif.be/ns/publicservice#")
 
 (add-prefix "ext" "http://mu.semte.ch/vocabularies/ext/")
