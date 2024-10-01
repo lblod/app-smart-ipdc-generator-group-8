@@ -1,6 +1,6 @@
 (define-resource public-service ()
   :class (s-prefix "ipdc:InstancePublicServiceSnapshot")
-  :properties `((:name :language-string-set ,(s-prefix "dct:title"))
+  :properties `((:title :language-string-set ,(s-prefix "dct:title"))
                  (:description :language-string-set ,(s-prefix "dct:description"))
                  (:additional-description :language-string-set ,(s-prefix "ipdc:additionalDescription"))
                  (:keyword :language-string-set ,(s-prefix "dcat:keyword"))
