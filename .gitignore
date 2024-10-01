@@ -4,6 +4,8 @@
 !/data/db/virtuoso.ini
 !/data/db/toLoad
 !/data/db/toLoad/*
+/data/ollama
+.DS_Store
 
 docker-compose.override.yml
 
