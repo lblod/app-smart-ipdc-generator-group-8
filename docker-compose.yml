@@ -93,6 +93,9 @@ services:
         condition: service_healthy    # Wait for 'ollama' container to be healthy
     entrypoint: >                     # Use the Ollama REST API to pull the mistral-nemo model
       /bin/sh -c 'curl http://ollama:11434/api/pull -d "{\"name\": \"mistral-nemo\"}" && echo "Curl command completed, model installed."'
-
+  
+  decision-consumer:
+    image: lblod/backend-smart-ipdc-generator-group-8:latest
+  
   tika:
     image: apache/tika:2.9.2.1

@@ -64,6 +64,10 @@ defmodule Dispatcher do
   # NOT FOUND
   #################
 
+  match "/decision-consumer/*path" do 
+    Proxy.forward conn, path, "http://decision-consumer/"
+  end
+
   match "/*_", %{ layer: :not_found } do
     send_resp( conn, 404, "Route not found.  See config/dispatcher.ex" )
   end
