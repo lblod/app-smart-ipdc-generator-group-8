@@ -34,11 +34,11 @@ The back-end is developed using python, a widely adopted, open-source programmin
 
 The back-end source code can be found at https://github.com/lblod/backend-smart-ipdc-generator-group-8.
 
-### Document Repository
+### Besluitendatabank (Document Repository)
 
 The document repository contains _Besluiten_, which are used as input for the system. The repository is accessed by the back-end to download the document for processing.
 
-### Text Extraction Service
+### Apache Tika Service (Text Extraction)
 
 The text extraction service is responsible for retrieving relevant text data from the document, which is then forwarded to the back-end for further processing.
 
@@ -46,17 +46,17 @@ This service utilizes Apache Tika, a widely adopted open-source library, to effi
 
 The configuration of the Tika service can be found in the docker configuration found at https://github.com/lblod/app-smart-ipdc-generator-group-8.
 
-### AI-driven Classification and Product Generation
+### AI Service
 
 This particular part of the architecture is responsible for generating products based on the extracted text data. The generated products are then classified using an AI model to ensure accuracy. It uses the AI Service to run the LLM models and a custom AI model to classify the generated products.
 
-### AI Service
+### Ollama Service
 
 The Ollama service, a widely used open-source platform for large language models (LLMs), is utilized to run LLM models within the system. The platform provides a REST API, enabling seamless integration with other services, enhancing interoperability and flexibility within the architecture.
 
 The configuration of the Ollama service can be found in the docker configuration found at https://github.com/lblod/app-smart-ipdc-generator-group-8.
 
-### Custom AI Model
+### Additional Classifiers (Custom AI model)
 
 A custom AI model was developed using data exported from the file `producten_en_diensten_2024-09-13_21-47-37.csv`. This model aids in classifying the generated products. Due to the constraints of the hackathon, the model was trained on a small dataset and a limited number of fields, which currently restricts its accuracy. However, with additional training data and further optimization, the model’s performance can be significantly enhanced.
 
@@ -67,6 +67,6 @@ More information can be found in following repositories:
 - https://github.com/lblod/type-classifier-ipdc-generator-group-8
 - https://github.com/lblod/doelgroep-classifier-ipdc-generator-group-8
 
-### Export Functionality
+### IPDC Export Functionality (Future Enhancement)
 
 A potential future enhancement is the addition of an export feature, enabling users to export the validated generated data to the IPDC platform. This would streamline data integration and improve workflow efficiency.
