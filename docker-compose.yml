@@ -103,6 +103,21 @@ services:
     image: lblod/ai-service-smart-ipdc-generator-group-8:latest
     labels:
       - "logging=true"
+
+  theme-classifier:
+    image: lblod/theme-classifier-ipdc-generator-group-8:latest
+    labels:
+      - "logging=true"
+
+  type-classifier:
+    image: lblod/type-classifier-ipdc-generator-group-8:latest
+    labels:
+      - "logging=true"
+
+  doelgroep-classifier:
+    image: lblod/doelgroep-classifier-ipdc-generator-group-8:latest
+    labels:
+      - "logging=true"
   
   tika:
     image: apache/tika:2.9.2.1
