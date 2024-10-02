@@ -48,7 +48,7 @@ The configuration of the Tika service can be found in the docker configuration f
 
 ### AI Service
 
-This particular part of the architecture is responsible for generating products based on the extracted text data. The generated products are then classified using an AI model to ensure accuracy. It uses the AI Service to run the LLM models and a custom AI model to classify the generated products.
+This particular part of the architecture is responsible for generating products based on the extracted text data. The generated products are then classified using an AI model to ensure accuracy. It uses the AI Service to run the LLM models and a custom AI model to classify the generated products. More information can be found in the documentation of the repository: https://github.com/lblod/ai-service-smart-ipdc-generator-group-8
 
 ### Ollama Service
 

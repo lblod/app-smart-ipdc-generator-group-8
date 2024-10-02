@@ -17,3 +17,5 @@ Specifically, it contains the following services:
     * type-classifier
     * doelgroep-classifier
 - An Apache tika service
+
+An overview of all the services is provided in the [architecture overview](./doc/architecture.md).
