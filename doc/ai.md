@@ -1,8 +1,3 @@
----
-title: General approach
-
----
-
 # General approach
 When discussing what use of AI was possible on the business case of the hackathon, we immediatly found that two approaches were possible to build a solution which benefits the ecosystem and provides value for ABB.
 
